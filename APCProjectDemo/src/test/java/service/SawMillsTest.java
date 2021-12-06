@@ -47,13 +47,23 @@ class SawMillsTest {
         list.add(1);
         list.add(2);
         list.add(1);
-        sawMills.getAllPermutations(list);
+        List<List<Integer>> ans = sawMills.getAllPermutations(list);
+        if (ans.size() != 3) {
+            System.out.println("NOT CORRECT - answer is " + ans.size());
+        } else {
+            System.out.println("CORRECT");
+        }
 
         List<Integer> list3 = new ArrayList<>();
         list3.add(1);
         list3.add(3);
         list3.add(2);
-        sawMills.getAllPermutations(list3);
+        ans = sawMills.getAllPermutations(list3);
+        if (ans.size() != 6) {
+            System.out.println("NOT CORRECT - answer is " + ans.size());
+        } else {
+            System.out.println("CORRECT");
+        }
     }
 
     public void getOptimalResultTests() {

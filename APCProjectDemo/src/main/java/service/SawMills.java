@@ -21,7 +21,7 @@ public class SawMills {
         System.out.println("max profit " + finalAns);
     }
 
-    public Integer getMaxProfit(List<Integer> list) {
+    Integer getMaxProfit(List<Integer> list) {
         List<List<Integer>> finalList = getAllPermutations(list);
         List<List<Integer>> ans = new ArrayList<>();
         int maxProfit = Integer.MIN_VALUE;
@@ -39,13 +39,13 @@ public class SawMills {
         return maxProfit;
     }
 
-    public List<List<Integer>> getAllPermutations(List<Integer> a) {
+    List<List<Integer>> getAllPermutations(List<Integer> a) {
         List<List<Integer>> list = new ArrayList<>();
-        generatePerm(a, 0, a.size(), list, new HashSet<>());
+        generateUniquePerm(a, 0, a.size(), list, new HashSet<>());
         return list;
     }
 
-    private void generatePerm(List<Integer> a, int i, int size, List<List<Integer>> permutations, Set<String> duplicateCheck) {
+    private void generateUniquePerm(List<Integer> a, int i, int size, List<List<Integer>> permutations, Set<String> duplicateCheck) {
         if (i == size) {
             String str = getHash(a);
             if (!duplicateCheck.contains(str)) {
@@ -58,7 +58,7 @@ public class SawMills {
             List<Integer> newList = new ArrayList<>(a);
             //swap i and j
             swap(i, j, newList);
-            generatePerm(newList, i+1, size, permutations, duplicateCheck);
+            generateUniquePerm(newList, i+1, size, permutations, duplicateCheck);
             swap(j, i, newList);
         }
     }

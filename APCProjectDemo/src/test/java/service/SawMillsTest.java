@@ -72,13 +72,18 @@ class SawMillsTest {
         finalList.add(list);
         finalList.add(list2);
         finalList.add(list3);
-        sawMills.getOptimalResult(finalList);
+        int ans = sawMills.getOptimalResult(finalList);
+        if (ans != 8) {
+            System.out.println("NOT CORRECT");
+        } else {
+            System.out.println("CORRECT");
+        }
     }
 
     public static void main(String[] args) {
         SawMillsTest sawMillsTest = new SawMillsTest();
-//        sawMillsTest.getProfitForCombination();
-//        sawMillsTest.generateAllPermutationTests();
+        sawMillsTest.getProfitForCombination();
+        sawMillsTest.generateAllPermutationTests();
         sawMillsTest.getOptimalResultTests();
     }
 }

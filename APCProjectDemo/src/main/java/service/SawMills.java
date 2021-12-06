@@ -13,12 +13,13 @@ public class SawMills {
         profitMap.put(3, 1);
     }
 
-    public void getOptimalResult(List<List<Integer>> list) {
+    public Integer getOptimalResult(List<List<Integer>> list) {
         int finalAns = 0;
         for (int i=0; i<list.size(); i++) {
             finalAns+=getMaxProfit(list.get(i));
         }
         System.out.println("max profit " + finalAns);
+        return finalAns;
     }
 
     Integer getMaxProfit(List<Integer> list) {
